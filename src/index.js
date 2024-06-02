@@ -1,3 +1,6 @@
-let a = 10;
+import {app} from "./app.js";
+import { dbConnect } from "./db/index.js";
 
-console.log(a);
+app.listen("8000", () =>{
+    console.log('server is runing')
+})
