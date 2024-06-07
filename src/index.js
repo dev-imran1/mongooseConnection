@@ -1,6 +1,8 @@
-import {app} from "./app.js";
-import { dbConnect } from "./db/index.js";
+import { app } from "./app.js";
+import { dbConnect } from "./db/mognodbConfig.js";
 
-    app.listen("8000", () =>{
-        console.log('server is runing')
-    })
+dbConnect();
+
+app.listen("8000", () => {
+    console.log('server is runing from main.js')
+})
