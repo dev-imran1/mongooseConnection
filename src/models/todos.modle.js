@@ -14,7 +14,7 @@ const todosSchema = new Schema({
         default:false
     },
     user:{
-        Type: Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref:"User"
     }
 },{
