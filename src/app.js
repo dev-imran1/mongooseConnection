@@ -11,12 +11,13 @@ const app = express();
 app.use(express.json({ limit: "16kb" })); //frontend theke id,password,mail asbe etar maddome. eta na dile asbe na. (16kb hote hobe)
 app.use(express.urlencoded({ limit: "16kb", extended: true })); //eta hosse url er code
 app.use(cors({
-    origin: "*"
+    origin: process.env.ORIGIN
     // origin: "http://localhost:8000"
+    // origin: "*"  //je kono server thke hit korte parbe
 }))
 app.use(cookieParser())
 
 
 
-app.use("/api/v1/users", userRoute)
+app.use(`${process.env.API_LINK}/users`, userRoute)
 export { app }
