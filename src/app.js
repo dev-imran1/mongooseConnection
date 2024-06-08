@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import userRoute from "./routes/user.routes.js"
 const app = express();
 
 // app.use // use k ekhane middleware hisebe bebohar kora hoyeche.
@@ -15,4 +16,7 @@ app.use(cors({
 }))
 app.use(cookieParser())
 
+
+
+app.use("/api/v1/users", userRoute)
 export { app }
