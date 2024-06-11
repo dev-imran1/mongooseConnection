@@ -1,6 +1,6 @@
 // shcema bolte bujay==> database e ki ki jabe seta;
 
-import mongoose, { Schema, Types } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 
 const userSchema = new Schema({

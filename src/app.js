@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import userRoute from "./routes/user.routes.js"
+import todosRoute from "./routes/todos.routes.js"
 const app = express();
 
 // app.use // use k ekhane middleware hisebe bebohar kora hoyeche.
@@ -12,12 +13,11 @@ app.use(express.json({ limit: "16kb" })); //frontend theke id,password,mail asbe
 app.use(express.urlencoded({ limit: "16kb", extended: true })); //eta hosse url er code
 app.use(cors({
     origin: process.env.ORIGIN
-    // origin: "http://localhost:8000"
-    // origin: "*"  //je kono server thke hit korte parbe
 }))
 app.use(cookieParser())
 
-
-
 app.use(`${process.env.API_LINK}/users`, userRoute)
+app.use(`${process.env.API_LINK}/todos`, todosRoute)
+
+
 export { app }
